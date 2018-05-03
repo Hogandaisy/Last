@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <title>photo</title>
+</head>
+<style type="text/css">
+	body{
+	background: url(images/WAY.jpg) no-repeat center center fixed;
+	 -webkit-background-size: cover;
+	 -moz-background-size: cover;
+	 -o-background-size: cover;
+	 background-size: cover;
+	}
+	.ico{
+		position: absolute;
+		left:30%; 
+		top: 0%;
+		margin-top: -100px;
+		width: 300px;
+		height: 300px;
+		margin:50px auto;
+		transition:all 1s;/*动画完成时间1s*/
+
+	}
+	.ico:hover{
+		width: 500px;
+		height: 500px;
+		border-radius:50%;
+		transition:all 1s esse-in 1s;
+		/*transition-property:width,height, border-radius;
+		transition-duration:1s;
+		transition-timing-function:ease-in;
+		transition-delay:1s;*/
+	}
+</style>
+<body>
+	<div class="box">
+		<a href="HTMLPage2.html">
+			<img class="ico" src="images/p.png"alt="photo" />
+		</a>
+	</div>
+</body>
+	
+</html>

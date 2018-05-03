@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" >
+<head>
+    <meta charset="UTF-8" >
+    <title>网页2</title>
+</head>
+
+	<script type="text/javascript">
+  
+//定义函数：构建要显示的时间日期字符串
+		function showTime(){
+			 //创建Date对象
+			 var today = new Date();
+			 //分别取出年、月、日、时、分、秒
+			 var year = today.getFullYear();
+			 var month = today.getMonth()+1;
+			 var day = today.getDate();
+			 var hours = today.getHours();
+			 var minutes = today.getMinutes();
+			 var seconds = today.getSeconds();
+			 //如果是单个数，则前面补0
+			 month  = month<10  ? "0"+month : month;
+			 day  = day <10  ? "0"+day : day;
+			 hours  = hours<10  ? "0"+hours : hours;
+			 minutes = minutes<10 ? "0"+minutes : minutes;
+			 seconds = seconds<10 ? "0"+seconds : seconds;
+  
+			 //构建要输出的字符串
+			 var str = year+"."+month+"."+day+"	<br> "+hours+":"+minutes+":"+seconds;
+			  //<br>代表将文字换行
+			 //获取id=result的对象
+			 var obj = document.getElementById("result");
+			 //将str的内容写入到id=result的<div>中去
+			 obj.innerHTML = str;
+			 //延时器
+			 window.setTimeout("showTime()",1000);
+		}
+	</script>
+	<style type="text/css">
+
+		.prc
+		{
+			position:absolute;/*绝对位置，指定位置*/
+			left:380px ;
+			top:20px;
+			z-index:-1;/*图层设置为-1*/
+		}
+		.icon{
+			position:absolute;
+			left:430px;
+			top:500px;
+			width:900px;
+			z-index:1;
+		}
+		.icon .TUBIAO {
+			column-count:8; /* 用整数值来定义列数。不允许负值 */
+		
+			column-gap: 50px; /*用长度值来定义列与列之间的间隙。不允许负值*/
+				}
+		.masonry {position:relative;left:15px; column-count: 8; column-gap: 55px; }/*上面控制了列与列之间的效果*/
+		.item { break-inside: avoid; box-sizing: border-box; padding: 10px; }
+		p{ 
+		font-size:12;/*字号*/
+		font-family: "Alcubierre";	/*字体*/
+		 color:#E2DFDD;/*字体颜色*/
+		 }
+		#result{
+		 position:absolute;
+		 left:690px ;
+		 margin:270px auto;/*距顶端距离*/
+		 color: #fdfdfd;
+		 text-align:right;
+		 font-family: "黑体";	/*字体*/
+		 font-size:45px;/*字号*/
+		 color:#E2DFDD;/*字体颜色*/
+		 padding:0px;/*内边距*/
+		}
+		
+
+		</style>
+
+
+
+<body bgcolor="#303342" onload="showTime()"><!--页面加载后执行JS：showTime!-->
+	<div id="result"><!--选择器"id"是唯一选择器，通常只使用一次。引用时以“#”开头：例#result-->
+	</div><!--优先级：id>class>html-->
+	<header class= "icon">
+	
+		<div class="TUBIAO">
+
+			<a href="Birthday.html"target="_self">
+				<img class="ico" src="images/Birthday.png"width="100px"height="100px"alt="Birthday" />
+				
+			</a>
+			<a href="logo.html"target="_self">
+				<img class="ico" src="images/My logo.jpg"width="100px"height="100px"alt="My logo" />
+			</a>
+			<a href="photo.html"target="_self">
+				<img class="ico" src="images/Photo.jpg"width="100px"height="100px"alt="Photo" />
+			</a>
+			<a href="index.html"_self">
+				<img class="ico" src="images/Lock.png"width="100px"height="100px"alt="Lock" />
+			</a>
+
+		</div>
+		<div class="masonry ">
+			<div class="item">
+				<p> Birthday</p>
+			</div>
+			<div class="item">
+				<p>Mylogo</p>
+			</div>
+			<div class="item">
+				<p>Photo	</p>
+			</div>
+			<div class="item">
+				<p>Locked	</p>
+			</div>
+		</div>
+		<div class="TUBIAO">
+			<a href="images/Hi stranger_Hogan.avi"target="_blank">
+				<img class="ico" src="images/Video.jpg"width="100px"height="100px"alt="Video" />
+			</a>
+			<a href="images/Magezine_Hogan.pdf"target="_blank">
+				<img class="ico" src="images/Works.jpg"width="100px"height="100px"alt="Works" />
+			</a>
+			<a href="https://github.com/Hogandaisy/t4"target="_blank">
+				<img class="ico" src="images/GitHub.jpg"width="100px"height="100px"alt="Birthday" />
+			</a>
+			<a href="https://dashboard.heroku.com/apps/stormy-fjord-61255"target="_blank">
+				<img class="ico" src="images/Heroku.jpg"width="100px"height="100px"alt="Heroku" />
+			</a>
+
+		</div>
+		</div>
+		<div class="masonry ">
+			<div class="item">
+				<p> Video</p>
+			</div>
+			<div class="item">
+				<p>Works	</p>
+			</div>
+			<div class="item">
+				<p>GitHub	</p>
+			</div>
+			<div class="item">
+				<p>Heroku	</p>
+			</div>
+		</div>
+		
+		
+	</header>
+	<img class="prc" src="images/2.png"width="560px"height="1225px"alt="text" />
+</body>
+</html>

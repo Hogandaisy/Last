@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" >
+<head>
+    <meta charset="UTF-8" >
+    <title>测试</title>
+</head>
+<style type="text/css">
+	.nav{
+	
+		top:500px;
+		width:900px;
+		margin:50px auto;	/*设置为水平居中*/
+		background-color: #fdfdfd;	/*背景颜色*/
+		/*border: 1px #ccc solid;	/*设置边框*/
+	}
+	.nav:after{
+		clear: both;
+		display: block;
+		overflow: hidden;
+		content: "";
+	}			/*清除浮动*/
+	.nav .item{
+		width: 200px;
+		height:100px;
+		margin-right: 10px;	/*右边距为5px*/
+		float: left;	/*左浮动*/
+		perspective: 4000px;	/*3D元素与视图距离（透视）*/
+	}
+	.nav .item a{
+		display: block;
+		height:  100px;
+		text-decoration: none;	/*取消下边线*/
+		transition:all .5s;	/*添加过渡动画*/
+		transform-style: preserve-3d;	/*3d子元素呈现3d效果*/
+	}			/*为item设置样式*/
+	.nav .item a p{
+		height: 100px;
+		margin:0;	/*默认边距*/
+		line-height: 100px;	/*行高*/
+		color: #fdfdfd;
+		text-align:center;	/*内容为居中*/
+		font-size: 20px;	/*字号*/
+		font-family: "Microsoft Yahei""Alcubierre";	/*字体*/
+		border-radius: 2px;	/*设置圆角*/
+		transition:all .5s;	/*添加过渡动画*/
+	}
+	.nav .item a p:first-child{
+		background-color: #CDB680;
+		transform:translateZ(50px);/*第一个p>标签沿Z轴移动90像素*/
+	}/*选框颜色区分*/
+	.nav .item a p:last-child{
+		background-color: #CDB680;
+		transform:translateZ(50px) rotateX(-90deg);/*第二个p>标签沿Z轴移动90像素,且沿X轴旋转负90度*/
+		margin-top: -50px;/*上边距*/
+	}
+	.nav .item a:hover{
+		transform:rotateX(90deg);/*鼠标划过a标签时，沿X轴旋转90度*/
+	}
+	.nav .item a:hover p:last-child{/*为第二个P标签设置样式*/
+		margin-top: 0;
+		transform:translateZ(0) rotateX(-90deg);/*沿z轴移动距离为0，沿x轴旋转角度为90度*/
+	}
+</style>
+<body>
+	<header class="nav">
+		<div class="item">
+			<a href="#">
+				<p>点击以解锁</p>
+				<p>Click to unlock</p>
+			</a>
+		</div>
+
+		<div class="item">
+			<a href="#">
+				<p>点击以解锁</p>
+				<p>Click to unlock</p>
+			</a>
+		</div>
+		
+		<div class="item">
+			<a href="#">
+				<p>点击以解锁</p>
+				<p>Click to unlock</p>
+			</a>
+		</div>
+		
+		<div class="item">
+			<a href="#">
+				<p>点击以解锁</p>
+				<p>Click to unlock</p>
+			</a>
+		</div>
+	</header>
+</body>
+</html>

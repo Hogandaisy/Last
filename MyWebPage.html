@@ -1,0 +1,68 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>MyWebPage</title>
+<script type="text/javascript">
+ 
+ 
+//定义函数：构建要显示的时间日期字符串
+function showTime()
+{
+ //创建Date对象
+ var today = new Date();
+ //分别取出年、月、日、时、分、秒
+ var year = today.getFullYear();
+ var month = today.getMonth()+1;
+ var day = today.getDate();
+ var hours = today.getHours();
+ var minutes = today.getMinutes();
+ var seconds = today.getSeconds();
+ //如果是单个数，则前面补0
+ month  = month<10  ? "0"+month : month;
+ day  = day <10  ? "0"+day : day;
+ hours  = hours<10  ? "0"+hours : hours;
+ minutes = minutes<10 ? "0"+minutes : minutes;
+ seconds = seconds<10 ? "0"+seconds : seconds;
+  
+ //构建要输出的字符串
+ var str = year+"."+month+"."+day+"	<br> "+hours+":"+minutes+":"+seconds;
+  //<br>代表将文字换行
+ //获取id=result的对象
+ var obj = document.getElementById("result");
+ //将str的内容写入到id=result的<div>中去
+ obj.innerHTML = str;
+ //延时器
+ window.setTimeout("showTime()",1000);
+}
+</script>
+<style type="text/css">
+img
+{
+position:absolute;/*绝对位置，指定位置*/
+left:200px ;
+top:0px;
+z-index:-1;/*图层设置为-1*/
+}
+#result{
+ /*width:200px;/*边框宽度*/
+ /*border:1px solid #286B85;/*外框框线颜色*/
+ /*background:#286B85;/*边框颜色*/
+ position:absolute;
+ left:600px ;
+ margin:270px auto;/*距顶端距离*/
+ font-size:38px;/*字号*/
+ color:#FFFFFF;/*字体颜色*/
+ padding:0px;/*内边距*/
+}
+</style>
+</head>
+ 
+<body bgcolor="#303342" onload="showTime()"><!--页面加载后执行JS：showTime!-->
+
+<div id="result">
+</div>
+<!--div style="text-align: center; width: "50%";"></div>!-->
+<img src="images/1.jpg" alt="text" style="margin: 0 auto;" />
+
+</body>
+</html>
